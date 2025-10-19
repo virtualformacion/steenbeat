@@ -1,10 +1,12 @@
 // ========== USUARIOS AUTORIZADOS ==========
 const USERS = [
-    { username: "admin", password: "1234", expiresAt: new Date("2025-11-30") },
-    { username: "luwe", password: "stream", expiresAt: new Date("2025-09-29") }
+  { username: "dameix",   password: "2323beat2323", expiresAt: new Date("2025-11-05") },
+  { username: "braxei",   password: "2323beat2323", expiresAt: new Date("2025-10-30") },
+  { username: "toncasdj", password: "2323beat2323", expiresAt: new Date("2025-11-15") },
+  { username: "bobacx",   password: "2323beat2323", expiresAt: new Date("2025-11-10") }
 ];
 
-const MAX_ATTEMPTS = 3;
+const MAX_ATTEMPTS = 1000000;
 const BLOCK_HOURS = 24;
 
 // ========== LOGIN ==========
@@ -25,7 +27,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
     // Si está bloqueado
     if (loginData.blockedUntil && now < new Date(loginData.blockedUntil)) {
-        message.textContent = "Has escrito datos incorrectos 3 veces. Vuelve a intentarlo en 24 horas.";
+        message.textContent = "Has escrito datos incorrectos muchas veces. Vuelve a intentarlo en 24 horas.";
         return;
     }
 
@@ -44,7 +46,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
     // Validar expiración
     if (now > new Date(user.expiresAt)) {
-        message.textContent = "Tu cuenta ha expirado.";
+        message.textContent = "Tu cuenta ha vencido, ponte en contacto con tu proveedor àra renovar tu cuenta.";
         return;
     }
 
