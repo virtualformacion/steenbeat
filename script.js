@@ -1,3 +1,60 @@
+// ========== USUARIOS AUTORIZADOS ==========
+const USERS = [
+    { username: "admin", password: "1234", expiresAt: new Date("2025-11-30") },
+    { username: "luwe", password: "stream", expiresAt: new Date("2025-09-29") }
+];
+
+const MAX_ATTEMPTS = 3;
+const BLOCK_HOURS = 24;
+
+// ========== LOGIN ==========
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById("loginUser").value.trim();
+    const password = document.getElementById("loginPass").value.trim();
+    const message = document.getElementById("loginMessage");
+    const user = USERS.find(u => u.username === username);
+    const storageKey = `login_${username}`;
+    const loginData = JSON.parse(localStorage.getItem(storageKey)) || {
+        attempts: 0,
+        blockedUntil: null
+    };
+
+    const now = new Date();
+
+    // Si está bloqueado
+    if (loginData.blockedUntil && now < new Date(loginData.blockedUntil)) {
+        message.textContent = "Has escrito datos incorrectos 3 veces. Vuelve a intentarlo en 24 horas.";
+        return;
+    }
+
+    // Validar usuario
+    if (!user || user.password !== password) {
+        loginData.attempts += 1;
+        if (loginData.attempts >= MAX_ATTEMPTS) {
+            loginData.blockedUntil = new Date(now.getTime() + BLOCK_HOURS * 60 * 60 * 1000).toISOString();
+            message.textContent = "Has escrito datos incorrectos 3 veces. Vuelve a intentarlo en 24 horas.";
+        } else {
+            message.textContent = "Datos incorrectos. Vuelve a intentarlo.";
+        }
+        localStorage.setItem(storageKey, JSON.stringify(loginData));
+        return;
+    }
+
+    // Validar expiración
+    if (now > new Date(user.expiresAt)) {
+        message.textContent = "Tu cuenta ha expirado.";
+        return;
+    }
+
+    // Acceso autorizado
+    localStorage.removeItem(storageKey);
+    document.getElementById("loginContainer").style.display = "none";
+    document.querySelector(".container").style.display = "block";
+});
+
+// ========== TU LÓGICA ORIGINAL (MODIFICADA) ==========
 document.getElementById("emailForm").addEventListener("submit", async function(event) {
     event.preventDefault();
     
