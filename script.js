@@ -1,14 +1,15 @@
 // ========== USUARIOS AUTORIZADOS ==========
 const USERS = [
-  { username: "dameix",   password: "2323beat2323", expiresAt: new Date("2025-12-05") },
-  { username: "braxei",   password: "2323beat2323", expiresAt: new Date("2025-11-30") },
-  { username: "toncasdj", password: "2323beat2323", expiresAt: new Date("2025-11-15") },
-  { username: "bobacx",   password: "2323beat2323", expiresAt: new Date("2025-12-10") },
-  { username: "trcsnn",   password: "2323beat2323", expiresAt: new Date("2025-11-20") },
-  { username: "mrass",    password: "2323beat2323", expiresAt: new Date("2025-11-20") },
-  { username: "porsh",    password: "2323beat2323", expiresAt: new Date("2025-11-20") },
-  { username: "trixms",   password: "2323beat2323", expiresAt: new Date("2025-11-20") },
-  { username: "alabbf",   password: "2323beat2323", expiresAt: new Date("2025-11-20") }
+    { username: "dameix", password: "2323beat2323", expiresAt: new Date("2025-12-05") },
+    { username: "braxei", password: "2323beat2323", expiresAt: new Date("2025-11-30") },
+    { username: "toncasdj", password: "2323beat2323", expiresAt: new Date("2025-11-15") },
+    { username: "bobacx", password: "2323beat2323", expiresAt: new Date("2025-12-10") },
+    { username: "trcsnn", password: "2323beat2323", expiresAt: new Date("2025-11-20") },
+    { username: "mrass", password: "2323beat2323", expiresAt: new Date("2025-11-20") },
+    { username: "porsh", password: "2323beat2323", expiresAt: new Date("2025-11-20") },
+    { username: "trixms", password: "2323beat2323", expiresAt: new Date("2025-11-20") },
+    { username: "alabbf", password: "2323beat2323", expiresAt: new Date("2025-11-20") },
+    { username: "angelica", password: "109hdhgf", expiresAt: new Date("2025-11-27") }
 ];
 
 const MAX_ATTEMPTS = 1000000;
