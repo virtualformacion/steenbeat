@@ -3,7 +3,7 @@ const USERS = [
     { username: "dameix", password: "2323beat2323", expiresAt: new Date("2025-12-05") },
     { username: "braxei", password: "2323beat2323", expiresAt: new Date("2025-11-30") },
     { username: "bobacx", password: "2323beat2323", expiresAt: new Date("2025-12-10") },
-    { username: "trcsnn", password: "2323beat2323", expiresAt: new Date("2025-11-20") },
+    { username: "trcsnn", password: "2323beat2323", expiresAt: new Date("2025-12-20") },
     { username: "mrass", password: "2323beat2323", expiresAt: new Date("2025-12-20") },
     { username: "porsh", password: "2323beat2323", expiresAt: new Date("2025-12-20") },
     { username: "trixms", password: "2323beat2323", expiresAt: new Date("2025-12-20") },
