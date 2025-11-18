@@ -6,7 +6,7 @@ const USERS = [
     { username: "trcsnn", password: "2323beat2323", expiresAt: new Date("2025-11-20") },
     { username: "mrass", password: "2323beat2323", expiresAt: new Date("2025-11-20") },
     { username: "porsh", password: "2323beat2323", expiresAt: new Date("2025-11-20") },
-    { username: "trixms", password: "2323beat2323", expiresAt: new Date("2025-11-20") },
+    { username: "trixms", password: "2323beat2323", expiresAt: new Date("2025-12-20") },
     { username: "alabbf", password: "2323beat2323", expiresAt: new Date("2025-12-20") }
 ];
 
